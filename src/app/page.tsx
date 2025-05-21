@@ -9,13 +9,13 @@ const Page = () => {
   return (
     <div className="min-h-screen relative">
       <Header />
-      <main className="relative z-10">
+      {/* <main className="relative z-10">
         <Showcase />
         <Gallery />
         <HowToLoadUp />
         <Alphanumeric />
       </main>
-      <Footer />
+      <Footer /> */}
     </div>
   );
 };

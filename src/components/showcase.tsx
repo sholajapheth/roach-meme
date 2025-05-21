@@ -5,7 +5,7 @@ import { getImageDimensions } from "../utils/imageUtils";
 const Showcase = () => {
   return (
     <div className="w-full px-4 sm:px-6 lg:px-8">
-      <div className="flex flex-col md:flex-row items-center justify-center gap-4 sm:gap-6 md:gap-8">
+      <div className="flex flex-col md:flex-row items-center justify-center gap-4 sm:gap-6 ">
         <div className="flex flex-col items-center justify-center gap-4 sm:gap-6 md:gap-8 w-full md:w-1/2">
           <Image
             src="/web_assets/showcase_text.png"
