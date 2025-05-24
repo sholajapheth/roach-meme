@@ -34,7 +34,7 @@ const Header = () => {
           alt="logo"
           width={isMobile ? 150 : 200}
           height={isMobile ? 75 : 100}
-          className="rounded-full"
+          className=""
         />
       </div>
 

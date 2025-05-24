@@ -1,6 +1,8 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import { getImageDimensions } from "../utils/imageUtils";
+import ReactPlayer from "react-player";
 
 const Showcase = () => {
   return (
@@ -52,16 +54,17 @@ const Showcase = () => {
           />
           {/* Video Container */}
           <div className="absolute -z-10 top-[3%] left-[14%] w-[72%] h-[80%] overflow-hidden">
-            <video
-              className="w-full h-full object-cover"
-              autoPlay
-              loop
-              // muted
-              playsInline
-              controls
-            >
-              <source src="/web_assets/roach-meme-video.mp4" type="video/mp4" />
-            </video>
+            <ReactPlayer
+              url="/web_assets/roach-meme-video.mp4"
+              width="100%"
+              height="100%"
+              playing={true}
+              loop={true}
+              controls={true}
+              // muted={true}
+              playsinline
+              style={{ objectFit: "cover" }}
+            />
           </div>
           {/* Roach Character with Bounce Animation */}
           <div className="absolute -bottom-2 sm:-bottom-3 left-1/2 transform -translate-x-1/2 w-[80%] sm:w-[85%] lg:w-[90%] animate-bounce-subtle">

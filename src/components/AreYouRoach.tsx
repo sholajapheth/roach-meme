@@ -3,7 +3,7 @@ import React from "react";
 
 const AreYouRoach = () => {
   return (
-    <section className="w-full px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-amber-50 via-orange-50 to-red-50">
+    <section className="w-full px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 ">
       <div className="max-w-6xl mx-auto">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
