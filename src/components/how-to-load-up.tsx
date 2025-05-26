@@ -4,7 +4,10 @@ import React from "react";
 
 const HowToLoadUp = () => {
   return (
-    <div className="flex flex-col items-center justify-center gap-4 mt-10">
+    <div
+      id="how-to-load"
+      className="flex flex-col items-center justify-center gap-4 mt-10"
+    >
       <Image
         src="/web_assets/how-to-load-up-text.png"
         alt="how to load up"

@@ -56,7 +56,7 @@ const Header = () => {
       {/* Desktop Navigation */}
       <div className="hidden md:flex items-center justify-center gap-[2em] md:gap-6 lg:gap-8 mr-[3em]">
         {[
-          { name: "THE MOVEMENT", section: "#movement" },
+          { name: "THE CULTURE", section: "#movement" },
           { name: "GALLERY", section: "#gallery" },
           { name: "HOW TO LOAD", section: "#how-to-load" },
           { name: "ALPHANUMERIC", section: "#alphanumeric" },
@@ -64,7 +64,12 @@ const Header = () => {
           <button
             key={item.name}
             className="flex items-center bg-transparent border-none cursor-pointer"
-            onClick={() => (window.location.href = item.section)}
+            onClick={() => {
+              const el = document.querySelector(item.section);
+              if (el) {
+                el.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
           >
             <h1 className="text-[#8C6239] font-GoodDog text-[2.5em] font-extrabold">
               {item.name}
@@ -90,7 +95,10 @@ const Header = () => {
               key={item.name}
               className="flex items-center bg-transparent border-none cursor-pointer"
               onClick={() => {
-                window.location.href = item.section;
+                const el = document.querySelector(item.section);
+                if (el) {
+                  el.scrollIntoView({ behavior: "smooth" });
+                }
                 setIsSidebarOpen(false);
               }}
             >

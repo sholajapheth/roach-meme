@@ -4,7 +4,10 @@ import Image from "next/image";
 
 const Gallery = () => {
   return (
-    <div className="flex flex-col items-center justify-center gap-4 sm:gap-6 md:gap-8 mt-10 px-4 sm:px-6 lg:px-8">
+    <div
+      id="gallery"
+      className="flex flex-col items-center justify-center gap-4 sm:gap-6 md:gap-8 mt-10 px-4 sm:px-6 lg:px-8"
+    >
       <Image
         src="/web_assets/nav/gallery.png"
         alt="gallery"

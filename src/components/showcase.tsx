@@ -1,8 +1,6 @@
-"use client";
 import Image from "next/image";
 import React from "react";
 import { getImageDimensions } from "../utils/imageUtils";
-import ReactPlayer from "react-player";
 
 const Showcase = () => {
   return (
@@ -43,40 +41,6 @@ const Showcase = () => {
       </div>
 
       {/* TV Section */}
-      <div className="flex flex-col items-center justify-center gap-4 sm:gap-6 lg:gap-8 mt-8 sm:mt-12 lg:mt-16 relative">
-        <div className="relative w-full max-w-[500px] sm:max-w-[650px] md:max-w-[750px] lg:max-w-[900px] xl:max-w-[1000px]">
-          <Image
-            src="/web_assets/tv.png"
-            alt="Television showcase"
-            className="w-full h-auto "
-            {...getImageDimensions(1000)}
-            priority
-          />
-          {/* Video Container */}
-          <div className="absolute -z-10 top-[3%] left-[14%] w-[72%] h-[80%] overflow-hidden">
-            <ReactPlayer
-              url="/web_assets/roach-meme-video.mp4"
-              width="100%"
-              height="100%"
-              playing={true}
-              loop={true}
-              controls={true}
-              // muted={true}
-              playsinline
-              style={{ objectFit: "cover" }}
-            />
-          </div>
-          {/* Roach Character with Bounce Animation */}
-          <div className="absolute -bottom-2 sm:-bottom-3 left-1/2 transform -translate-x-1/2 w-[80%] sm:w-[85%] lg:w-[90%] animate-bounce-subtle">
-            <Image
-              src="/web_assets/cock_watching.png"
-              alt="Character watching TV"
-              className="w-full h-auto"
-              {...getImageDimensions(800)}
-            />
-          </div>
-        </div>
-      </div>
     </div>
   );
 };
