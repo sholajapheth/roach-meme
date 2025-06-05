@@ -27,7 +27,7 @@ const Header = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row mt-[2em] items-center justify-between px-4 md:px-8">
+    <div className="flex flex-col md:flex-row mt-[2em] items-center justify-between px-4 md:px-8 sticky z-[20] top-0">
       <div className="md:ml-[4em]">
         <Image
           src={"/logo.png"}
@@ -58,8 +58,8 @@ const Header = () => {
         {[
           { name: "THE CULTURE", section: "#movement" },
           { name: "GALLERY", section: "#gallery" },
-          { name: "HOW TO LOAD", section: "#how-to-load" },
-          { name: "ALPHANUMERIC", section: "#alphanumeric" },
+          // { name: "HOW TO LOAD", section: "#how-to-load" },
+          // { name: "ALPHANUMERIC", section: "#alphanumeric" },
         ].map((item) => (
           <button
             key={item.name}
@@ -88,8 +88,8 @@ const Header = () => {
           {[
             { name: "ABOUT", section: "#about" },
             { name: "GALLERY", section: "#gallery" },
-            { name: "HOW TO LOAD", section: "#how-to-load" },
-            { name: "ALPHANUMERIC", section: "#alphanumeric" },
+            // { name: "HOW TO LOAD", section: "#how-to-load" },
+            // { name: "ALPHANUMERIC", section: "#alphanumeric" },
           ].map((item) => (
             <button
               key={item.name}

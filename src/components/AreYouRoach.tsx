@@ -52,21 +52,15 @@ const AreYouRoach = () => {
               <div className="space-y-4 sm:space-y-6">
                 <div className="bg-white p-6 sm:p-8 rounded-2xl border-l-8 border-red-500 shadow-lg hover:shadow-xl transition-shadow">
                   <p className="text-[#8C6239] font-gooddog text-lg sm:text-xl md:text-2xl font-extrabold leading-relaxed">
-                    If you&apos;ve been{" "}
-                    <span className="text-red-600">
-                      rugged 3 times this week
-                    </span>{" "}
-                    and you&apos;re still scrolling charts...
+                    If you&apos;ve ever felt like an outsider but kept showing
+                    up...
                   </p>
                 </div>
 
                 <div className="bg-white p-6 sm:p-8 rounded-2xl border-l-8 border-orange-500 shadow-lg hover:shadow-xl transition-shadow">
                   <p className="text-[#8C6239] font-gooddog text-lg sm:text-xl md:text-2xl font-extrabold leading-relaxed">
-                    If your{" "}
-                    <span className="text-orange-600">
-                      MetaMask is a museum of dead tokens
-                    </span>
-                    ...
+                    If your story is full of setbacks, but you keep moving
+                    forward...
                   </p>
                 </div>
 
@@ -74,8 +68,8 @@ const AreYouRoach = () => {
                   <p className="text-[#8C6239] font-gooddog text-lg sm:text-xl md:text-2xl font-extrabold leading-relaxed">
                     If you&apos;ve ever told yourself{" "}
                     <span className="text-yellow-600">
-                      &quot;maybe it&apos;ll bounce&quot;
-                    </span>
+                      &quot;I&apos;m not done yet&quot;
+                    </span>{" "}
                     ...
                   </p>
                 </div>
@@ -84,10 +78,10 @@ const AreYouRoach = () => {
               {/* Revelation */}
               <div className="bg-gradient-to-r from-[#8C6239] to-[#7A5533] p-8 sm:p-10 lg:p-12 rounded-2xl shadow-2xl text-center">
                 <p className="text-white font-gooddog text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-6">
-                  You&apos;re not a trader.
+                  You&apos;re not just surviving.
                 </p>
                 <p className="text-yellow-300 font-gooddog text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
-                  You&apos;re a roach.
+                  You&apos;re part of the culture.
                 </p>
                 <p className="text-white font-gooddog text-xl sm:text-2xl md:text-3xl font-extrabold leading-relaxed">
                   Welcome home.
@@ -167,7 +161,7 @@ const AreYouRoach = () => {
                   99%
                 </div>
                 <div className="text-[#8C6239] font-gooddog text-sm sm:text-base font-bold">
-                  RUGGED
+                  RESILIENT
                 </div>
               </div>
               <div className="bg-white p-4 sm:p-6 rounded-xl border-2 border-orange-500 text-center shadow-lg hover:shadow-xl transition-shadow">
@@ -175,7 +169,7 @@ const AreYouRoach = () => {
                   100+
                 </div>
                 <div className="text-[#8C6239] font-gooddog text-sm sm:text-base font-bold">
-                  DEAD TOKENS
+                  STORIES
                 </div>
               </div>
               <div className="bg-white p-4 sm:p-6 rounded-xl border-2 border-yellow-500 text-center shadow-lg hover:shadow-xl transition-shadow">
@@ -183,7 +177,7 @@ const AreYouRoach = () => {
                   ∞
                 </div>
                 <div className="text-[#8C6239] font-gooddog text-sm sm:text-base font-bold">
-                  FALSE HOPE
+                  HOPE
                 </div>
               </div>
               <div className="bg-white p-4 sm:p-6 rounded-xl border-2 border-green-500 text-center shadow-lg hover:shadow-xl transition-shadow">
@@ -191,7 +185,7 @@ const AreYouRoach = () => {
                   1
                 </div>
                 <div className="text-[#8C6239] font-gooddog text-sm sm:text-base font-bold">
-                  TRUE HOME
+                  COMMUNITY
                 </div>
               </div>
             </div>

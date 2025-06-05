@@ -59,52 +59,47 @@ const Movement = () => {
           {/* Text Content */}
           <div className="w-full lg:w-2/3 space-y-6 sm:space-y-8">
             {/* Opening Statement */}
-            <div className="bg-gradient-to-br from-amber-50 to-orange-50 p-6 sm:p-8 lg:p-10 rounded-2xl border-2 border-[#8C6239] shadow-lg">
+            <div className="bg-gradient-to-br from-[#1a120b] to-[#8C6239] p-6 sm:p-8 lg:p-10 rounded-2xl border-2 border-[#8C6239] shadow-lg">
               <p className="text-[#8C6239] font-gooddog text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold leading-relaxed text-center">
                 <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
-                  $ROACH
+                  ROACH CULTURE
                 </span>{" "}
-                is a memecoin — and a movement.
+                is a movement of the unbreakable.
               </p>
               <p className="text-[#8C6239] font-gooddog text-lg sm:text-xl md:text-2xl lg:text-3xl font-extrabold leading-relaxed text-center mt-4">
                 It&apos;s for{" "}
                 <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl">
-                  the ones who stayed.
+                  the ones who stayed together.
                 </span>
               </p>
               <p className="text-[#8C6239] font-gooddog text-lg sm:text-xl md:text-2xl lg:text-3xl font-extrabold leading-relaxed text-center mt-4">
-                The ones who held through{" "}
-                <span className="text-red-600">
-                  rugs, nukes, scams, zero liquidity,
-                </span>{" "}
-                and Discord mods named{" "}
-                <span className="text-blue-600">&quot;Steve.&quot;</span>
+                The ones who endured every storm, every setback, and every
+                challenge—and kept crawling forward.
               </p>
             </div>
 
             {/* Core Philosophy */}
-            <div className="bg-gradient-to-br from-orange-50 to-red-50 p-6 sm:p-8 lg:p-10 rounded-2xl border-2 border-[#8C6239] shadow-lg">
+            <div className="bg-gradient-to-br from-[#2d1a0e] to-[#7A5533] p-6 sm:p-8 lg:p-10 rounded-2xl border-2 border-[#8C6239] shadow-lg">
               <p className="text-[#8C6239] font-gooddog text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight text-center mb-6">
                 We don&apos;t cope. We crawl.
               </p>
               <p className="text-[#8C6239] font-gooddog text-lg sm:text-xl md:text-2xl font-extrabold leading-relaxed text-center">
-                This isn&apos;t about utility.
+                This isn&apos;t about profit or loss.
               </p>
               <p className="text-[#8C6239] font-gooddog text-lg sm:text-xl md:text-2xl font-extrabold leading-relaxed text-center mt-2">
-                This is about surviving the worst parts of crypto and still
-                hitting the{" "}
-                <span className="text-green-600">&quot;buy&quot;</span> button.
+                This is about surviving the worst parts of life and still
+                showing up for your community.
               </p>
             </div>
 
             {/* Culture Statement */}
-            <div className="bg-gradient-to-br from-amber-50 to-yellow-50 p-6 sm:p-8 lg:p-10 rounded-2xl border-2 border-[#8C6239] shadow-lg">
+            <div className="bg-gradient-to-br from-[#1a120b] to-[#8C6239] p-6 sm:p-8 lg:p-10 rounded-2xl border-2 border-[#8C6239] shadow-lg">
               <p className="text-[#8C6239] font-gooddog text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold leading-relaxed text-center mb-4">
-                $ROACH is a culture for the unkillable.
+                Roach culture is for the unkillable.
               </p>
               <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8">
                 <p className="text-[#8C6239] font-gooddog text-lg sm:text-xl md:text-2xl font-extrabold">
-                  Built disgusting.
+                  Built resilient.
                 </p>
                 <p className="text-[#8C6239] font-gooddog text-lg sm:text-xl md:text-2xl font-extrabold">
                   Multiply on impact.
@@ -113,22 +108,22 @@ const Movement = () => {
             </div>
 
             {/* What It Means Section */}
-            <div className="bg-gradient-to-br from-red-50 to-orange-50 p-6 sm:p-8 lg:p-10 rounded-2xl border-2 border-[#8C6239] shadow-lg">
+            <div className="bg-gradient-to-br from-[#2d1a0e] to-[#7A5533] p-6 sm:p-8 lg:p-10 rounded-2xl border-2 border-[#8C6239] shadow-lg">
               <h3 className="text-[#8C6239] font-gooddog text-2xl sm:text-3xl md:text-4xl font-extrabold text-center mb-6">
                 To be a roach means:
               </h3>
               <div className="space-y-3 sm:space-y-4">
                 <p className="text-[#8C6239] font-gooddog text-base sm:text-lg md:text-xl font-bold leading-relaxed">
-                  ✗ You&apos;ve bagheld things that never launched
+                  ✗ You&apos;ve endured things that would break others
                 </p>
                 <p className="text-[#8C6239] font-gooddog text-base sm:text-lg md:text-xl font-bold leading-relaxed">
-                  ✗ You&apos;ve been rugged, sniped, front-run, and still aped
+                  ✗ You&apos;ve faced setbacks, obstacles, and kept going
                 </p>
                 <p className="text-[#8C6239] font-gooddog text-base sm:text-lg md:text-xl font-bold leading-relaxed">
-                  ✗ You&apos;ve added on red candles
+                  ✗ You&apos;ve adapted to every environment
                 </p>
                 <p className="text-[#8C6239] font-gooddog text-base sm:text-lg md:text-xl font-bold leading-relaxed">
-                  ✗ You probably deserve zero
+                  ✗ You probably deserve a break
                 </p>
                 <p className="text-[#8C6239] font-gooddog text-xl sm:text-2xl md:text-3xl font-extrabold leading-relaxed text-center mt-6 pt-4 border-t-2 border-[#8C6239]">
                   And yet… you&apos;re still here
@@ -139,14 +134,15 @@ const Movement = () => {
             {/* Final Statement */}
             <div className="bg-gradient-to-br from-[#8C6239] to-[#7A5533] p-6 sm:p-8 lg:p-10 rounded-2xl shadow-xl">
               <p className="text-white font-gooddog text-lg sm:text-xl md:text-2xl font-extrabold leading-relaxed text-center mb-4">
-                That&apos;s why $ROACH isn&apos;t just a coin — it&apos;s a{" "}
-                <span className="text-yellow-300">badge.</span>
+                That&apos;s why roach culture isn&apos;t just a meme — it&apos;s
+                a <span className="text-yellow-300">badge</span>.
               </p>
               <p className="text-white font-gooddog text-lg sm:text-xl md:text-2xl font-extrabold leading-relaxed text-center mb-4">
-                A <span className="text-yellow-300">culture.</span>
+                A <span className="text-yellow-300">culture</span>.
               </p>
               <p className="text-white font-gooddog text-lg sm:text-xl md:text-2xl font-extrabold leading-relaxed text-center">
-                A way of <span className="text-yellow-300">coping.</span>
+                A way of <span className="text-yellow-300">coping</span> and
+                thriving together.
               </p>
             </div>
           </div>
@@ -157,11 +153,11 @@ const Movement = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-[#8C6239] rounded-full blur-2xl opacity-20 scale-110"></div>
               <Image
-                src="/web_assets/cock_head.gif"
+                src="/web_assets/roach-coin.jpg"
                 alt="The Movement - Roach Survivor"
                 width={400}
                 height={400}
-                className="relative w-[200px] sm:w-[250px] md:w-[300px] lg:w-[320px] rounded-full"
+                className="relative w-[200px] sm:w-[250px] md:w-[300px] lg:w-[320px] rounded-full animate-pulse"
                 priority
               />
             </div>
