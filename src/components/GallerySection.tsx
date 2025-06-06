@@ -3,10 +3,26 @@ import { useState, useCallback, useEffect } from "react";
 import Image from "next/image";
 
 const galleryImages = [
-  { src: "/web_assets/roach_fighting_dog.jpg", alt: "Roach fighting dog" },
-  { src: "/web_assets/roach_gm.jpg", alt: "Roach GM" },
-  { src: "/web_assets/roach_squeezing_dog.jpg", alt: "Roach squeezing dog" },
-  { src: "/web_assets/roach_on_money.jpg", alt: "Roach on money" },
+  {
+    src: "/web_assets/roach_fighting_dog.jpg",
+    alt: "Roach fighting dog",
+    caption: "Bear market? Roach fight club.",
+  },
+  {
+    src: "/web_assets/roach_gm.jpg",
+    alt: "Roach GM",
+    caption: "GM from the underworld.",
+  },
+  {
+    src: "/web_assets/roach_squeezing_dog.jpg",
+    alt: "Roach squeezing dog",
+    caption: "You merely aped, I was molded by rugs.",
+  },
+  {
+    src: "/web_assets/roach_on_money.jpg",
+    alt: "Roach on money",
+    caption: "Sitting on stacks, still coping.",
+  },
 ];
 
 export default function GallerySection() {
@@ -31,6 +47,15 @@ export default function GallerySection() {
     );
   }, []);
 
+  const showRandom = () => {
+    let rand = Math.floor(Math.random() * galleryImages.length);
+    // Avoid showing the same image if modal is open
+    if (modalOpen && rand === currentIndex)
+      rand = (rand + 1) % galleryImages.length;
+    setCurrentIndex(rand);
+    setModalOpen(true);
+  };
+
   useEffect(() => {
     if (!modalOpen) return;
     const handleKey = (e: KeyboardEvent) => {
@@ -50,23 +75,34 @@ export default function GallerySection() {
       <h2 className="text-3xl sm:text-4xl md:text-5xl font-gooddog text-yellow-300 mb-8 font-extrabold text-center">
         The Gallery
       </h2>
+      <button
+        onClick={showRandom}
+        className="mb-6 px-6 py-3 bg-yellow-300 text-[#18120b] font-gooddog text-xl rounded-full shadow-lg hover:bg-yellow-400 transition"
+      >
+        Show Random Meme
+      </button>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full max-w-screen-xl">
         {galleryImages.map((img, idx) => (
-          <button
-            key={img.src}
-            className="focus:outline-none"
-            onClick={() => openModal(idx)}
-            tabIndex={0}
-            aria-label={`Open image: ${img.alt}`}
-          >
-            <Image
-              src={img.src}
-              alt={img.alt}
-              width={400}
-              height={400}
-              className="w-full h-auto rounded-xl shadow-lg transition-transform duration-200 hover:scale-105 hover:shadow-2xl"
-            />
-          </button>
+          <div key={img.src} className="flex flex-col items-center">
+            <button
+              className="focus:outline-none"
+              onClick={() => openModal(idx)}
+              tabIndex={0}
+              aria-label={`Open image: ${img.alt}`}
+            >
+              <Image
+                src={img.src}
+                alt={img.alt}
+                width={400}
+                height={400}
+                className="w-full h-auto rounded-xl shadow-lg transition-transform duration-200 hover:scale-105 hover:shadow-2xl"
+                unoptimized
+              />
+            </button>
+            <div className="mt-2 text-yellow-200 font-gooddog text-base text-center max-w-[90%]">
+              {img.caption}
+            </div>
+          </div>
         ))}
       </div>
       {/* Modal/Lightbox */}
@@ -100,6 +136,7 @@ export default function GallerySection() {
               height={600}
               className="rounded-xl max-h-[80vh] w-auto h-auto mx-auto shadow-2xl"
               priority
+              unoptimized
             />
             <button
               className="absolute right-2 top-1/2 -translate-y-1/2 text-white text-4xl px-2 focus:outline-none"
@@ -108,8 +145,8 @@ export default function GallerySection() {
             >
               &#8594;
             </button>
-            <div className="mt-4 text-white text-center text-lg font-gooddog">
-              {galleryImages[currentIndex].alt}
+            <div className="mt-4 text-yellow-200 text-center text-lg font-gooddog max-w-xl">
+              {galleryImages[currentIndex].caption}
             </div>
           </div>
         </div>
