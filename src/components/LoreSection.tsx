@@ -50,11 +50,11 @@ export default function LoreSection() {
             alt="Roach TV Frame"
             width={1000}
             height={600}
-            className="w-full h-auto"
+            className="w-full h-auto  relative"
             unoptimized
           />
           {/* Video inside TV */}
-          <div className="absolute top-[8%] left-[13%] w-[74%] h-[68%] overflow-hidden rounded-lg shadow-lg">
+          <div className="absolute top-[3.5%] left-[15%] w-[70%] h-[74.5%] overflow-hidden rounded-lg shadow-lg ">
             <video
               className="w-full h-full object-cover"
               src="/web_assets/roach-meme-video.mp4"

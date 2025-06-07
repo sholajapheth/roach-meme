@@ -23,6 +23,31 @@ const galleryImages = [
     alt: "Roach on money",
     caption: "Sitting on stacks, still coping.",
   },
+  {
+    src: "/web_assets/roach-siked.jpg",
+    alt: "Roach siked",
+    caption: "Siked. Ready to conquer the world!",
+  },
+  {
+    src: "/web_assets/roach-thinking.jpg",
+    alt: "Roach thinking",
+    caption: "Thinking. Plotting the next big move.",
+  },
+  {
+    src: "/web_assets/gladiator-roach.jpg",
+    alt: "Gladiator roach",
+    caption: "Gladiator. Fearless and fierce.",
+  },
+  {
+    src: "/web_assets/roach-fx.jpg",
+    alt: "Roach fx",
+    caption: "Roach FX: Surviving every chart.",
+  },
+  {
+    src: "/web_assets/roach-crowned.jpg",
+    alt: "Roach with crown",
+    caption: "Roach royalty: King of survival.",
+  },
 ];
 
 export default function GallerySection() {
