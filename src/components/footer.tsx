@@ -4,66 +4,46 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <>
+    <footer className="relative w-full min-h-screen text-center">
       <Image
-        src={"/web_assets/footer.jpeg"}
-        alt="cock head"
-        width={100}
-        height={100}
-        className="w-full h-auto"
-        unoptimized
+        src="/web_assets/footer_standing_roachs_bg.png"
+        alt="Roaches in a desolate city"
+        fill
+        className="object-cover w-full h-full"
       />
-      <footer className="w-full py-8 px-4 bg-[#18120b] text-center border-t border-[#2d1a0e] mt-8">
-        <div className="flex flex-col items-center gap-4">
-          <div className="flex gap-6 justify-center mb-2">
-            <a
-              href="https://x.com/your_x_handle"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="X"
-              className="hover:scale-110 transition-transform"
-            >
-              <Image
-                src="/web_assets/x-icon.png"
-                alt="X"
-                width={32}
-                height={32}
-              />
-            </a>
-            <a
-              href="https://tiktok.com/@your_tiktok_handle"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="TikTok"
-              className="hover:scale-110 transition-transform"
-            >
+      <div className="w-full h-full flex justify-center items-center">
+        <div className="absolute z-10 flex flex-col items-center justify-center h-full -top-20 md:top-0 ">
+          <h2 className="text-3xl text-yellow-300 font-gooddog mb-4">
+            oUR Social Media
+          </h2>
+          <div className="flex gap-6 justify-center">
+            <a href="#" className="hover:scale-110 transition-transform">
               <Image
                 src="/web_assets/tiktok.png"
                 alt="TikTok"
-                width={32}
-                height={32}
+                width={40}
+                height={40}
               />
             </a>
-            <a
-              href="https://instagram.com/your_instagram_handle"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-              className="hover:scale-110 transition-transform"
-            >
+            <a href="#" className="hover:scale-110 transition-transform">
+              <Image
+                src="/web_assets/x-icon.png"
+                alt="X"
+                width={40}
+                height={40}
+              />
+            </a>
+            <a href="#" className="hover:scale-110 transition-transform">
               <Image
                 src="/web_assets/instagram-icon.png"
                 alt="Instagram"
-                width={32}
-                height={32}
+                width={40}
+                height={40}
               />
             </a>
           </div>
-          <div className="text-yellow-300 font-gooddog text-lg">
-            © {new Date().getFullYear()} Roach Infestation
-          </div>
         </div>
-      </footer>
-    </>
+      </div>
+    </footer>
   );
 }
