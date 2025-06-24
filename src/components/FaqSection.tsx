@@ -13,37 +13,37 @@ const faqData: FaqItemData[] = [
     question: "What is The Roach Show?",
     answer:
       "It's the center of our universe. The stage where the memes are born and the legends are made. The Roach Show is our community's home.",
-    bgImage: "/web_assets/faq/faq_1.png",
+    bgImage: "/web_assets/faq_1.png",
   },
   {
     question: "Is this just another meme coin?",
     answer:
       "We're not just a coin, we're a culture. We thrive in chaos and survive the unsurvivable. Roaches were here before the bullrun, and we'll be here after.",
-    bgImage: "/web_assets/faq/faq_2.png",
+    bgImage: "/web_assets/faq_2.png",
   },
   {
     question: "What's the utility?",
     answer:
       "Utility? The only utility is survival. And memes. We outlast, we out-meme, we out-cope. That's the roach way.",
-    bgImage: "/web_assets/faq/faq_3.png",
+    bgImage: "/web_assets/faq_3.png",
   },
   {
     question: "How do I join the infestation?",
     answer:
       "Find us in the darkest corners of the internet. Join our socials, spread the memes, and prove you're unkillable. The button is right above.",
-    bgImage: "/web_assets/faq/faq_4.png",
+    bgImage: "/web_assets/faq_4.png",
   },
   {
     question: "When did roaches get so tough?",
     answer:
       "We were always this tough. You're just now noticing because everything else is starting to crumble. We were born in the dirt.",
-    bgImage: "/web_assets/faq/faq_5.png",
+    bgImage: "/web_assets/faq_5.png",
   },
   {
     question: "Who is the leader of the roaches?",
     answer:
       "There are no leaders in the swarm, only survivors. We move as one, a decentralized force of nature that can't be stopped.",
-    bgImage: "/web_assets/faq/faq_6.png",
+    bgImage: "/web_assets/faq_6.png",
   },
 ];
 
@@ -87,7 +87,7 @@ export default function FaqSection() {
 
   return (
     <section id="faq" className="py-16 px-4">
-      <h2 className="text-4xl text-yellow-300 font-gooddog text-center mb-8">
+      <h2 className="text-4xl text-[#d29620] font-gooddog text-center mb-8">
         FAQ
       </h2>
       <div className="max-w-3xl mx-auto">

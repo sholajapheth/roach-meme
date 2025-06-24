@@ -20,11 +20,11 @@ interface ArrowProps {
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
-function NextArrow({ onClick }: ArrowProps) {
+export function NextArrow({ onClick }: ArrowProps) {
   return (
     <button
       onClick={onClick}
-      className="absolute top-1/2 -right-4 sm:-right-8 transform -translate-y-1/2 z-10"
+      className="absolute top-1/2 -right-0 sm:-right-8 transform -translate-y-1/2 z-10"
     >
       <div className="hidden sm:block">
         <Image
@@ -46,11 +46,11 @@ function NextArrow({ onClick }: ArrowProps) {
   );
 }
 
-function PrevArrow({ onClick }: ArrowProps) {
+export function PrevArrow({ onClick }: ArrowProps) {
   return (
     <button
       onClick={onClick}
-      className="absolute top-1/2 -left-4 sm:-left-8 transform -translate-y-1/2 z-10"
+      className="absolute top-1/2 -left-0 sm:-left-8 transform -translate-y-1/2 z-10"
     >
       <div className="hidden sm:block">
         <Image
@@ -91,7 +91,7 @@ export default function GallerySection() {
   return (
     <section className="py-16 px-4 text-center overflow-hidden">
       <div className="flex justify-center mb-8">
-        <h2 className="text-4xl text-yellow-300 font-gooddog">Gallery</h2>
+        <h2 className="text-4xl text-[#d29620] font-gooddog">Gallery</h2>
       </div>
 
       <div className="max-w-4xl mx-auto md:py-12">

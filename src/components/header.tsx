@@ -6,8 +6,8 @@ import { useState, useEffect } from "react";
 
 const navLinks = [
   { href: "#collection", label: "collection" },
-  { href: "#how-to-join", label: "join me" },
-  { href: "#", label: "infestation" },
+  { href: "#how-to-join", label: "join the infestation" },
+
   { href: "#faq", label: "FAQ" },
 ];
 
@@ -61,7 +61,7 @@ export default function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-yellow-300 font-gooddog text-2xl lg:text-4xl hover:text-white hover:scale-105 transition-all duration-300"
+                  className="text-[#d29620] font-gooddog text-2xl lg:text-4xl hover:text-white hover:scale-105 transition-all duration-300"
                 >
                   {link.label}
                 </Link>
@@ -148,7 +148,7 @@ export default function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-yellow-300 font-gooddog text-4xl sm:text-5xl hover:text-white hover:scale-110 transition-all duration-300 text-center w-full py-4 border-b border-yellow-300 border-opacity-20 last:border-b-0"
+                  className="text-[#d29620] font-gooddog text-4xl sm:text-5xl hover:text-white hover:scale-110 transition-all duration-300 text-center w-full py-4 border-b border-yellow-300 border-opacity-20 last:border-b-0"
                   onClick={handleLinkClick}
                   style={{
                     animationDelay: `${index * 100}ms`,
@@ -162,7 +162,7 @@ export default function Header() {
 
             {/* Optional: Add social links or additional content */}
             <div className="mt-12 text-center">
-              <p className="text-yellow-300 font-gooddog text-xl opacity-70">
+              <p className="text-[#d29620] font-gooddog text-xl opacity-70">
                 Welcome to the Roach Kingdom
               </p>
             </div>

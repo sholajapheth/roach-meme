@@ -1,33 +1,24 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import { NextArrow, PrevArrow } from "./GallerySection";
+
+import { PrevArrow, NextArrow } from "./GallerySection";
 
 const slides = [
-  { id: 1, src: "/web_assets/collection/1.jpg", alt: "Siked Roach" },
-  { id: 2, src: "/web_assets/collection/2.jpg", alt: "Thinking Roach" },
-  { id: 3, src: "/web_assets/collection/3.jpg", alt: "Gladiator Roach" },
-  { id: 4, src: "/web_assets/collection/4.jpg", alt: "Crowned Roach" },
-  { id: 5, src: "/web_assets/collection/5.jpg", alt: "Roach fighting dog" },
-  { id: 6, src: "/web_assets/collection/6.jpg", alt: "Roach GM" },
-  { id: 7, src: "/web_assets/collection/7.jpg", alt: "Roach GM" },
-  { id: 8, src: "/web_assets/collection/8.jpg", alt: "Roach GM" },
-  { id: 9, src: "/web_assets/collection/9.jpg", alt: "Roach GM" },
-  { id: 10, src: "/web_assets/collection/10.jpg", alt: "Roach GM" },
-  { id: 11, src: "/web_assets/collection/11.jpg", alt: "Roach GM" },
-  { id: 12, src: "/web_assets/collection/12.jpg", alt: "Roach GM" },
-  { id: 13, src: "/web_assets/collection/13.jpg", alt: "Roach GM" },
-  { id: 14, src: "/web_assets/collection/14.jpg", alt: "Roach GM" },
-  { id: 15, src: "/web_assets/collection/15.jpg", alt: "Roach GM" },
-  { id: 16, src: "/web_assets/collection/16.jpg", alt: "Roach GM" },
-  { id: 17, src: "/web_assets/collection/17.jpg", alt: "Roach GM" },
-  { id: 18, src: "/web_assets/collection/18.jpg", alt: "Roach GM" },
-
+  { id: 1, src: "/web_assets/roach_fighting_dog.jpg", alt: "Roach fighting dog" },
+  { id: 2, src: "/web_assets/roach_gm.jpg", alt: "Roach GM" },
+  { id: 3, src: "/web_assets/roach_squeezing_dog.jpg", alt: "Roach squeezing dog" },
+  { id: 4, src: "/web_assets/roach_on_money.jpg", alt: "Roach on money" },
+  { id: 4, src: "/web_assets/roach-crowned.jpg", alt: "Roach on money" },
+  { id: 4, src: "/web_assets/roach-fx.jpg", alt: "Roach on money" },
+  { id: 4, src: "/web_assets/roach-thinking.jpg", alt: "Roach on money" },
+  { id: 4, src: "/web_assets/gladiator-roach.jpg", alt: "Roach on money" },
+  // Add more as needed
 ];
 
 const totalSlides = slides.length;
 
-export default function CollectionSection() {
+export default function GallerySlider() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -73,11 +64,8 @@ export default function CollectionSection() {
     touchEndX.current = e.changedTouches[0].clientX;
     const delta = touchStartX.current - touchEndX.current;
     if (Math.abs(delta) > 50) {
-      if (delta > 0) {
-        nextSlide();
-      } else {
-        prevSlide();
-      }
+      if (delta > 0) nextSlide();
+      else prevSlide();
     }
   };
 
@@ -107,13 +95,10 @@ export default function CollectionSection() {
 
   return (
     <section
-      id="collection"
+      id="gallery"
       className="py-16 px-2 sm:px-4 text-center overflow-hidden"
     >
-      <h2 className="text-4xl text-[#d29620]  font-gooddog mb-8">
-        collection
-      </h2>
-
+      <h2 className="text-4xl text-[#d29620] font-gooddog mb-8">Gallery</h2>
       <div className="relative w-full max-w-5xl mx-auto">
         <div
           className="relative h-72 sm:h-96 flex items-center justify-center"
@@ -125,16 +110,17 @@ export default function CollectionSection() {
           {slides.map((slide, index) => (
             <div
               key={slide.id}
-              className="absolute w-64 sm:w-72 h-64 sm:h-72 transition-all duration-700 ease-out rounded-xl cursor-pointer"
+              className="absolute w-[20em] sm:w-[30em] h-[13em] sm:h-[18em] transition-all duration-700 ease-out rounded-xl cursor-pointer  overflow-hidden"
               style={getSlideStyle(index)}
               onClick={() => goToSlide(index)}
             >
               <div className="absolute inset-0 z-10 pointer-events-none">
                 <Image
-                  src="/web_assets/collection/collection_section_item_frame.png"
+                  src="/web_assets/gallery/gallery_picture_frame.png"
                   alt="Frame"
-                  fill
-                  className="object-contain"
+                  width={100}
+                  height={100}
+                  className="w-[20em] sm:w-[30em] h-[13em] sm:h-[18em]"
                 />
               </div>
               <div className="absolute inset-4 z-0">
@@ -149,10 +135,12 @@ export default function CollectionSection() {
             </div>
           ))}
         </div>
-
         {/* Navigation Buttons */}
-      <PrevArrow onClick={prevSlide}/>
-      <NextArrow onClick={nextSlide}/>
+      
+          <PrevArrow onClick={prevSlide}/>
+
+    
+          <NextArrow   onClick={nextSlide}/>
 
         {/* Dot Indicators */}
         <div className="flex justify-center mt-8 space-x-2">
@@ -163,27 +151,14 @@ export default function CollectionSection() {
               disabled={isAnimating}
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
                 index === currentIndex
-                  ? "bg-[#a88031] scale-125"
-                  : "bg-[#322820] hover:bg-white/60"
+
+                ? "bg-[#a88031] scale-125"
+                : "bg-[#322820] hover:bg-white/60"
               }`}
             />
           ))}
         </div>
       </div>
-
-      {/* About Section */}
-      <div className="mt-12 max-w-2xl mx-auto px-4">
-        <h3 className="text-4xl text-[#d29620]  font-gooddog mb-4">
-          ABOUT COLLECTION
-        </h3>
-        <p className="text-lg text-[#d29620] ">
-          This isn&apos;t just a collection; it&apos;s a testament to survival. Each roach is a
-          survivor, a pixelated warrior hardened by market winters and rugged
-          landscapes. They&apos;ve crawled through the filth to emerge stronger,
-          tougher, and ready for the next apocalypse. Owning one doesn&apos;t make you
-          a collector, it makes you part of the swarm.
-        </p>
-      </div>
     </section>
   );
-}
+} 

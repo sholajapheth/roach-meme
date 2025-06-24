@@ -80,7 +80,7 @@ const AreYouRoach = () => {
                 <p className="text-white font-gooddog text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight mb-6">
                   You&apos;re not just surviving.
                 </p>
-                <p className="text-yellow-300 font-gooddog text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+                <p className="text-[#d29620] font-gooddog text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
                   You&apos;re part of the culture.
                 </p>
                 <p className="text-white font-gooddog text-xl sm:text-2xl md:text-3xl font-extrabold leading-relaxed">

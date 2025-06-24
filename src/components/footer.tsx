@@ -13,7 +13,7 @@ export default function Footer() {
       />
       <div className="w-full h-full flex justify-center items-center">
         <div className="absolute z-10 flex flex-col items-center justify-center h-full -top-20 md:top-0 ">
-          <h2 className="text-3xl text-yellow-300 font-gooddog mb-4">
+          <h2 className="text-3xl text-[#d29620] font-gooddog mb-4">
             oUR Social Media
           </h2>
           <div className="flex gap-6 justify-center">

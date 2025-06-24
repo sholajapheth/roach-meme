@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full h-[400px] sm:h-[500px] md:h-[600px] overflow-hidden">
+    <section className="relative w-full h-[250px] sm:h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden">
       {/* Main Red Curtain Background */}
       <Image
         src="/web_assets/roach_show/the_raoch_show_main_red_curtain_bg.png"
@@ -14,7 +14,7 @@ export default function HeroSection() {
       />
 
       {/* The Roach Show Text and Light Bulb Display */}
-      <div className="absolute top-1/4 md:top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 w-3/4 md:w-1/2">
+      <div className="absolute top-1/4 md:top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 w-[80%] md:w-1/2">
         <Image
           src="/web_assets/roach_show/the_raoch_show_text_and_light_bulb_display.png"
           alt="The Roach Show Sign"
@@ -65,7 +65,7 @@ export default function HeroSection() {
       </div>
 
       {/* Lightening Effect */}
-      <div className="absolute -top-20 sm:top-0 left-0 w-full h-full z-40 pointer-events-none">
+      <div className="absolute -top-10 sm:top-0 left-0 w-full h-full z-40 pointer-events-none">
         <Image
           src="/web_assets/roach_show/the_raoch_show_lightening.png"
           alt="Lighting Effect"
