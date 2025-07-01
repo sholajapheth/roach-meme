@@ -15,11 +15,12 @@ interface Roach {
 const GAME_DURATION = 7; // seconds
 const INITIAL_ROACHES = 15;
 
-function getInitialRoaches() {
+function getInitialRoaches(width: number, height: number) {
+  // If width/height are 0 (SSR), just use 0,0 for all roaches
   return Array.from({ length: INITIAL_ROACHES }, (_, i) => ({
     id: i,
-    x: Math.random() * window.innerWidth,
-    y: Math.random() * window.innerHeight,
+    x: width > 0 ? Math.random() * width : 0,
+    y: height > 0 ? Math.random() * height : 0,
     direction: Math.random() * 360,
     speed: 0.5 + Math.random() * 1.5,
     size: 0.8 + Math.random() * 0.4,
@@ -28,7 +29,8 @@ function getInitialRoaches() {
 }
 
 export default function RoachCrawler() {
-  const [roaches, setRoaches] = useState<Roach[]>(getInitialRoaches());
+  const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
+  const [roaches, setRoaches] = useState<Roach[]>([]);
   const [score, setScore] = useState(0);
   const [timer, setTimer] = useState(GAME_DURATION);
   const [gameActive, setGameActive] = useState(false);
@@ -38,12 +40,32 @@ export default function RoachCrawler() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
   const animationRef = useRef<NodeJS.Timeout | null>(null);
-  const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
+
+  // Get window size for confetti and roach positions
+  useEffect(() => {
+    function handleResize() {
+      setWindowSize({ width: window.innerWidth, height: window.innerHeight });
+    }
+    if (typeof window !== "undefined") {
+      handleResize();
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }
+  }, []);
+
+  // Initialize roaches after window size is known (client only)
+  useEffect(() => {
+    if (windowSize.width > 0 && windowSize.height > 0) {
+      setRoaches(getInitialRoaches(windowSize.width, windowSize.height));
+    }
+  }, [windowSize.width, windowSize.height]);
 
   // Load high score from localStorage
   useEffect(() => {
-    const stored = localStorage.getItem("roach_high_score");
-    if (stored) setHighScore(Number(stored));
+    if (typeof window !== "undefined") {
+      const stored = localStorage.getItem("roach_high_score");
+      if (stored) setHighScore(Number(stored));
+    }
   }, []);
 
   // Timer logic
@@ -56,7 +78,9 @@ export default function RoachCrawler() {
       if (score > highScore) {
         setHighScore(score);
         setIsNewHighScore(true);
-        localStorage.setItem("roach_high_score", String(score));
+        if (typeof window !== "undefined") {
+          localStorage.setItem("roach_high_score", String(score));
+        }
       } else {
         setIsNewHighScore(false);
       }
@@ -76,10 +100,10 @@ export default function RoachCrawler() {
           const newX = roach.x + Math.cos((roach.direction * Math.PI) / 180) * roach.speed;
           const newY = roach.y + Math.sin((roach.direction * Math.PI) / 180) * roach.speed;
           let newDirection = roach.direction;
-          if (newX <= 0 || newX >= window.innerWidth) {
+          if (windowSize.width > 0 && (newX <= 0 || newX >= windowSize.width)) {
             newDirection = 180 - roach.direction;
           }
-          if (newY <= 0 || newY >= window.innerHeight) {
+          if (windowSize.height > 0 && (newY <= 0 || newY >= windowSize.height)) {
             newDirection = -roach.direction;
           }
           if (Math.random() < 0.02) {
@@ -87,15 +111,15 @@ export default function RoachCrawler() {
           }
           return {
             ...roach,
-            x: Math.max(0, Math.min(window.innerWidth, newX)),
-            y: Math.max(0, Math.min(window.innerHeight, newY)),
+            x: Math.max(0, Math.min(windowSize.width, newX)),
+            y: Math.max(0, Math.min(windowSize.height, newY)),
             direction: newDirection,
           };
         })
       );
     }, 50);
     return () => clearInterval(animationRef.current!);
-  }, [gameActive]);
+  }, [gameActive, windowSize.width, windowSize.height]);
 
   // Handle roach click (crush)
   const handleCrush = (id: number) => {
@@ -109,7 +133,6 @@ export default function RoachCrawler() {
     // Play sound with debug logging
     if (audioRef.current) {
       try {
-        console.log('Crush: Attempting to play roach crush sound');
         audioRef.current.currentTime = 0;
         audioRef.current.volume = 1;
         const playPromise = audioRef.current.play();
@@ -119,8 +142,6 @@ export default function RoachCrawler() {
             console.warn('Roach crush sound failed to play:', err);
           });
         }
-        // eslint-disable-next-line no-console
-        console.log('Attempted to play roach crush sound');
       } catch (err) {
         // eslint-disable-next-line no-console
         console.error('Error playing roach crush sound:', err);
@@ -136,21 +157,13 @@ export default function RoachCrawler() {
   const handleStart = () => {
     setScore(0);
     setTimer(GAME_DURATION);
-    setRoaches(getInitialRoaches());
+    if (windowSize.width > 0 && windowSize.height > 0) {
+      setRoaches(getInitialRoaches(windowSize.width, windowSize.height));
+    }
     setShowModal(false);
     setIsNewHighScore(false);
     setGameActive(true);
   };
-
-  // Get window size for confetti
-  useEffect(() => {
-    function handleResize() {
-      setWindowSize({ width: window.innerWidth, height: window.innerHeight });
-    }
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   return (
     <>
