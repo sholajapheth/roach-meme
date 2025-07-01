@@ -8,6 +8,10 @@
   font-display: swap;
 }
 
+html, body {
+  cursor: url("/web_assets/cock_head.gif"), pointer;
+}
+
 @layer base {
   html {
     font-family: "GoodDog", sans-serif;
